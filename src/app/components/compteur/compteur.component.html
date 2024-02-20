@@ -1,0 +1,10 @@
+<h1>Compteur</h1>
+
+<div>
+  <p>Compteur: {{ count }}</p>
+</div>
+
+<div>
+  <button (click)="increment()">+</button>
+  <button *ngIf="count > 0" (click)="decrement()">-</button>
+</div>

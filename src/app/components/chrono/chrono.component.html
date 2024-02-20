@@ -1,0 +1,37 @@
+<p>chrono works!</p>
+
+<div class="chrono-container">
+  <div class="chrono">
+    <p>{{ milliseconds | timer }}</p>
+  </div>
+</div>
+
+<div class="buttons">
+  <p-button
+    icon="pi pi-play"
+    label="Start"
+    severity="success"
+    [disabled]="isStarted"
+    [outlined]="isStarted"
+    [raised]="true"
+    (onClick)="start()"
+  />
+
+  <p-button
+    icon="pi pi-pause"
+    label="Stop"
+    [disabled]="!isStarted"
+    [outlined]="!isStarted"
+    [raised]="true"
+    (onClick)="stop()"
+  />
+
+  <p-button
+    icon="pi pi-replay"
+    label="Reset"
+    severity="danger"
+    [raised]="true"
+    (onClick)="reset()"
+  />
+
+</div>

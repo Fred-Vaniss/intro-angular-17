@@ -1,0 +1,22 @@
+<h1>Hello component</h1>
+
+<p>Hello {{ name }}</p>
+
+<p>Age: {{ age }}</p>
+
+<p>Birthdate: {{ birthdate | date : 'dd/MM/yyyy' }}</p>
+
+<p [ngStyle]="myStyle">Est admin: {{ isAdmin }}</p>
+
+@if (isAdmin)
+{
+  <p>Je suis un admin</p>
+} @else {
+  <p>Bas les pattes, client!</p>
+}
+
+<ul>
+  <li *ngFor="let item of ingredients; let i = index">
+    {{ item }} (index: {{i}})
+  </li>
+</ul>
