@@ -1,0 +1,25 @@
+
+<div class="form">
+  <input type="text" pInputText [(ngModel)]="inputText" (keydown.enter)="submit()"/>
+  <p-button
+    label="Submit"
+    (onClick)="submit()"
+  />
+</div>
+
+<div class="table">
+  <p-table [value]="list">
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width:70%">Item</th>
+        <th>Action</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item let-index = "rowIndex">
+      <tr>
+        <td>{{item}}</td>
+        <td><p-button icon="pi pi-trash" size="small" (onClick)="delete(index)"/></td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
