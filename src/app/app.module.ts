@@ -10,6 +10,10 @@ import {ButtonModule} from "primeng/button";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {RippleModule} from "primeng/ripple";
 import { TimerPipe } from './pipes/timer.pipe';
+import { ListComponent } from './components/list/list.component';
+import {InputTextModule} from "primeng/inputtext";
+import {FormsModule} from "@angular/forms";
+import {TableModule} from "primeng/table";
 
 @NgModule({
   declarations: [
@@ -17,14 +21,18 @@ import { TimerPipe } from './pipes/timer.pipe';
     HelloComponent,
     CompteurComponent,
     ChronoComponent,
-    TimerPipe
+    TimerPipe,
+    ListComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     RippleModule,
-    ButtonModule
+    ButtonModule,
+    InputTextModule,
+    FormsModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
