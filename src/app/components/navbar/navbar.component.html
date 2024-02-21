@@ -1,8 +1,16 @@
+<!--<div class="wrapper">-->
+<!--  <ul>-->
+<!--    <li><a routerLink="home">Home</a></li>-->
+<!--    <li><a routerLink="hello">Hello</a></li>-->
+<!--    <li><a routerLink="chrono">Stopwatch</a></li>-->
+<!--    <li><a routerLink="exercices">Exercices</a></li>-->
+<!--  </ul>-->
+<!--</div>-->
+
 <div class="wrapper">
   <ul>
-    <li><a routerLink="home">Home</a></li>
-    <li><a routerLink="hello">Hello</a></li>
-    <li><a routerLink="chrono">Stopwatch</a></li>
-    <li><a routerLink="exercices">Exercices</a></li>
+    @for(item of menu; track item.route){
+      <li><a routerLink="{{item.route}}">{{item.label}}</a> </li>
+    }
   </ul>
 </div>
