@@ -14,6 +14,9 @@ import { ListComponent } from './components/list/list.component';
 import {InputTextModule} from "primeng/inputtext";
 import {FormsModule} from "@angular/forms";
 import {TableModule} from "primeng/table";
+import {ToastModule} from "primeng/toast";
+import {ConfirmPopupModule} from "primeng/confirmpopup";
+import {CheckboxModule} from "primeng/checkbox";
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import {TableModule} from "primeng/table";
     ButtonModule,
     InputTextModule,
     FormsModule,
-    TableModule
+    TableModule,
+    ToastModule,
+    ConfirmPopupModule,
+    CheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

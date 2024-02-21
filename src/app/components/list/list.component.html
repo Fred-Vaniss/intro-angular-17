@@ -17,9 +17,12 @@
     </ng-template>
     <ng-template pTemplate="body" let-item let-index = "rowIndex">
       <tr>
-        <td>{{item}}</td>
-        <td><p-button icon="pi pi-trash" size="small" (onClick)="delete(index)"/></td>
+        <td [class]="{strike: item.done}"><p-checkbox [(ngModel)]="item.done" [binary]="true" /> {{item.name}}</td>
+        <td><p-button icon="pi pi-trash" size="small" (onClick)="confirmDelete($event, index, item.name)"/></td>
       </tr>
     </ng-template>
   </p-table>
 </div>
+
+<p-toast/>
+<p-confirmPopup/>
