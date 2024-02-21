@@ -8,6 +8,7 @@ p-button{
 }
 
 .chrono{
+  width: 8em;
   font-size: 5em;
   font-weight: bold;
   padding: 1rem;
@@ -22,7 +23,7 @@ p-button{
   }
 }
 
-.chrono, .buttons{
+.buttons{
   display: flex;
   justify-content: center;
 }
