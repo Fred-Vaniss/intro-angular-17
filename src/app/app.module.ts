@@ -17,6 +17,8 @@ import {TableModule} from "primeng/table";
 import {ToastModule} from "primeng/toast";
 import {ConfirmPopupModule} from "primeng/confirmpopup";
 import {CheckboxModule} from "primeng/checkbox";
+import { HomeComponent } from './components/home/home.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {CheckboxModule} from "primeng/checkbox";
     CompteurComponent,
     ChronoComponent,
     TimerPipe,
-    ListComponent
+    ListComponent,
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
