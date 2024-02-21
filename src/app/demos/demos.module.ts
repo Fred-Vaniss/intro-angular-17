@@ -7,6 +7,7 @@ import {CompteurComponent} from "./components/compteur/compteur.component";
 import { CustomDirectiveComponent } from './components/custom-directive/custom-directive.component';
 import { HighlightDirective } from './components/custom-directive/highlight.directive';
 import {SharedModule} from "../shared-module/shared.module";
+import {HelloComponent} from "./components/hello/hello.component";
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {SharedModule} from "../shared-module/shared.module";
     DemosComponent,
     CompteurComponent,
     CustomDirectiveComponent,
-    HighlightDirective
+    HighlightDirective,
+    HelloComponent
   ],
   imports: [
     SharedModule,
