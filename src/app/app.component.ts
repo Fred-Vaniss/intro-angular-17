@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {PrimeNGConfig} from "primeng/api";
+import {MenuItem, PrimeNGConfig} from "primeng/api";
 import {IMenu} from "./components/navbar/IMenu";
 
 @Component({
@@ -18,7 +18,45 @@ export class AppComponent implements OnInit{
     { route: 'demos', label: 'Demos'}
   ]
 
+  items: MenuItem[] | undefined;
+
+
+
   ngOnInit() {
     this.primengConfig.ripple = true;
+
+    this.items = [
+      {
+        label: 'Home',
+        icon: 'pi pi-home',
+        routerLink: '/'
+      },
+      {
+        label: 'Demos',
+        items: [
+          {
+            label: 'Compteur',
+            routerLink: 'demos/count'
+          }
+        ]
+      },
+      {
+        label: 'Exos',
+        items: [
+          {
+            label: 'Stopwatch',
+            routerLink: 'exos/chrono'
+          },
+          {
+            label : 'Checklist',
+            routerLink: 'exos/list'
+          },
+          {
+            label : 'Shopping list',
+            routerLink: 'exos/shopping'
+          }
+        ]
+      }
+    ]
   }
 }

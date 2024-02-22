@@ -7,9 +7,5 @@ import {IMenu} from "../components/navbar/IMenu";
   styleUrl: './exercices.component.scss'
 })
 export class ExercicesComponent {
-  menu : Array<IMenu> = [
-    {route: 'chrono', label: 'Stop watch'},
-    {route: 'list', label: 'Checklist'},
-    {route: 'shopping', label: 'Shopping list'}
-  ]
+
 }

@@ -8,6 +8,7 @@ import { RippleModule } from "primeng/ripple";
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import {SharedModule} from "./shared-module/shared.module";
+import {MenubarModule} from "primeng/menubar";
 
 @NgModule({
   declarations: [
@@ -15,13 +16,14 @@ import {SharedModule} from "./shared-module/shared.module";
     HomeComponent,
     NotFoundComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    RippleModule,
-    SharedModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        RippleModule,
+        SharedModule,
+        MenubarModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

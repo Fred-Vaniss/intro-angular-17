@@ -6,8 +6,21 @@
 //  font-family: sans-serif;
 //}
 //
+body{
+  margin: 0;
+}
+
 .wrapper{
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.menu-bg{
+  background-color: #374151;
+  border-bottom: 1px solid #697c98;
+}
+
+.p-menubar{
+  border: none;
 }
