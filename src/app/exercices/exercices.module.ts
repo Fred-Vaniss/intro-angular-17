@@ -8,6 +8,8 @@ import {RouterModule} from "@angular/router";
 import {ChronoComponent} from "./components/chrono/chrono.component";
 import {TimerPipe} from "./pipes/timer.pipe";
 import {SharedModule} from "../shared-module/shared.module";
+import { ShoppingParentComponent } from './components/shopping-parent/shopping-parent.component';
+import { ShoppingEnfantComponent } from './components/shopping-enfant/shopping-enfant.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import {SharedModule} from "../shared-module/shared.module";
     ExercicesComponent,
     ListComponent,
     ChronoComponent,
-    TimerPipe
+    TimerPipe,
+    ShoppingParentComponent,
+    ShoppingEnfantComponent
   ],
   imports: [
     CommonModule,

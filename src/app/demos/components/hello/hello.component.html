@@ -20,3 +20,10 @@
     {{ item }} (index: {{i}})
   </li>
 </ul>
+
+<ul>
+  @for(item of ingredients; track $index)
+  {
+    <li>{{ item }} (index: {{$index}}</li>
+  }
+</ul>
