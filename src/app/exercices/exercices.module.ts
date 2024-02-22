@@ -8,8 +8,10 @@ import {RouterModule} from "@angular/router";
 import {ChronoComponent} from "./components/chrono/chrono.component";
 import {TimerPipe} from "./pipes/timer.pipe";
 import {SharedModule} from "../shared-module/shared.module";
-import { ShoppingParentComponent } from './components/shopping-parent/shopping-parent.component';
-import { ShoppingEnfantComponent } from './components/shopping-enfant/shopping-enfant.component';
+import { ShoppingParentComponent } from './components/shopping/shopping-parent/shopping-parent.component';
+import { ShoppingEnfantComponent } from './components/shopping/shopping-enfant/shopping-enfant.component';
+import { ShoppingWithServiceParentComponent } from './components/shopping-w-service/shopping-with-service-parent/shopping-with-service-parent.component';
+import { ShoppingWithServiceEnfantComponent } from './components/shopping-w-service/shopping-with-service-enfant/shopping-with-service-enfant.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { ShoppingEnfantComponent } from './components/shopping-enfant/shopping-e
     ChronoComponent,
     TimerPipe,
     ShoppingParentComponent,
-    ShoppingEnfantComponent
+    ShoppingEnfantComponent,
+    ShoppingWithServiceParentComponent,
+    ShoppingWithServiceEnfantComponent
   ],
   imports: [
     CommonModule,

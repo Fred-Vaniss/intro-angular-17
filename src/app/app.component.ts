@@ -54,6 +54,10 @@ export class AppComponent implements OnInit{
           {
             label : 'Shopping list',
             routerLink: 'exos/shopping'
+          },
+          {
+            label : 'Shopping list with service',
+            routerLink: 'exos/shopping-service'
           }
         ]
       }

@@ -1,0 +1,8 @@
+<h3>Shopping form</h3>
+
+<div class="form">
+  <input type="text" pInputText [(ngModel)]="inputText" (keyup.enter)="submit()"/>
+  <p-button label="Submit" (onClick)="submit()"/>
+</div>
+
+<app-shopping-with-service-enfant/>
