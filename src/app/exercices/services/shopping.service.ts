@@ -6,13 +6,22 @@ import { Injectable } from '@angular/core';
 export class ShoppingService {
   constructor() { }
 
-  list : string[] = [];
+  list :  Record<string, number> = {
+    "Pomme": 1,
+    "Poire": 4,
+    "Bananes": 3
+  } ;
 
   addItem(item: string): void {
-    this.list.push(item);
+    if (this.list[item]) {
+      this.list[item]++
+      return;
+    }
+
+    this.list[item] = 1;
   }
 
-  delete(index: number): void{
-    this.list.splice(index, 1);
+  delete(index: string): void{
+    delete this.list[index];
   }
 }

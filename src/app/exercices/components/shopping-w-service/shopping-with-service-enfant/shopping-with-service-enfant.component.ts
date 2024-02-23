@@ -10,11 +10,11 @@ export class ShoppingWithServiceEnfantComponent {
 
   constructor( private _shoppingService: ShoppingService ){}
 
-  public get listService() : string[] {
+  public get listService() : Record<string, number> {
     return this._shoppingService.list
   }
 
-  deleteItem(index: number) : void {
+  deleteItem(index: string) : void {
     this._shoppingService.delete(index);
   }
 }
