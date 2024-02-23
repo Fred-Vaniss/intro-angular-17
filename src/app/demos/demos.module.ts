@@ -10,6 +10,8 @@ import {SharedModule} from "../shared-module/shared.module";
 import {HelloComponent} from "./components/hello/hello.component";
 import { HttpRequestComponent } from './components/http-request/http-request.component';
 import {HttpClientModule} from "@angular/common/http";
+import { FormsComponent } from './components/forms/forms.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -19,12 +21,15 @@ import {HttpClientModule} from "@angular/common/http";
     CustomDirectiveComponent,
     HighlightDirective,
     HelloComponent,
-    HttpRequestComponent
+    HttpRequestComponent,
+    FormsComponent
   ],
   imports: [
     SharedModule,
     DemosRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class DemosModule { }

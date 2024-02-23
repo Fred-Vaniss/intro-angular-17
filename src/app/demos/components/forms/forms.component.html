@@ -1,0 +1,17 @@
+<p>forms works!</p>
+
+<div class="p-card">
+  <div class="ui-">
+
+  </div>
+</div>
+
+<form [formGroup]="formGroup">
+  <input type="text" pInputText formControlName="control1"> <br/>
+  <input type="text" pInputText formControlName="control2"> <br/>
+  <p-button
+    label="Submit"
+    [disabled]="!formGroup.valid"
+    (onClick)="submit()"
+  />
+</form>

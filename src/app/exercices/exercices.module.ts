@@ -12,6 +12,9 @@ import { ShoppingParentComponent } from './components/shopping/shopping-parent/s
 import { ShoppingEnfantComponent } from './components/shopping/shopping-enfant/shopping-enfant.component';
 import { ShoppingWithServiceParentComponent } from './components/shopping-w-service/shopping-with-service-parent/shopping-with-service-parent.component';
 import { ShoppingWithServiceEnfantComponent } from './components/shopping-w-service/shopping-with-service-enfant/shopping-with-service-enfant.component';
+import { FormsComponent } from './components/forms/forms.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {CalendarModule} from "primeng/calendar";
 
 
 @NgModule({
@@ -23,13 +26,16 @@ import { ShoppingWithServiceEnfantComponent } from './components/shopping-w-serv
     ShoppingParentComponent,
     ShoppingEnfantComponent,
     ShoppingWithServiceParentComponent,
-    ShoppingWithServiceEnfantComponent
+    ShoppingWithServiceEnfantComponent,
+    FormsComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     RouterModule,
     ExercicesRoutingModule,
+    ReactiveFormsModule,
+    CalendarModule
   ]
 })
 export class ExercicesModule { }

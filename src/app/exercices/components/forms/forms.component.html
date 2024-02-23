@@ -1,0 +1,81 @@
+<h2>Form exercice</h2>
+
+<form class="mt-5" [formGroup]="formGroup">
+
+  <div class="formgrid grid">
+
+    <div class="field col-12 md:col-6">
+      <span class="p-float-label">
+        <input pInputText type="text" id="firstname" formControlName="firstName"/>
+        <label for="firstname">First name</label>
+      </span>
+    </div>
+
+    <div class="field col-12 md:col-6">
+      <span class="p-float-label">
+        <input pInputText type="text" id="lastname" formControlName="lastName"/>
+        <label for="lastname">Last name</label>
+      </span>
+    </div>
+
+  </div>
+
+  <div class="formgrid grid">
+
+    <div class="field col-12 md:col-4">
+      <span class="p-float-label">
+        <input pInputText type="email" id="mail" formControlName="eMail"/>
+        <label for="mail">E-mail</label>
+      </span>
+    </div>
+
+    <div class="field col-12 md:col-4">
+      <span class="p-float-label">
+        <input pInputText type="password" id="password" formControlName="pWord"/>
+        <label for="password">Password</label>
+      </span>
+    </div>
+
+    <div class="field col-12 md:col-4">
+      <span class="p-float-label">
+        <input pInputText type="password" id="conf-password" formControlName="pWordConf"/>
+        <label for="conf-password">Confirm password</label>
+      </span>
+    </div>
+
+  </div>
+
+  <div class="formgrid grid">
+
+    <div class="field col-12">
+      <span class="p-float-label">
+        <input pInputText type="text" id="adress" formControlName="address">
+        <label for="adress">Address</label>
+      </span>
+    </div>
+
+  </div>
+
+  <div class="formgrid grid">
+
+    <div class="field col-12 md:col-6">
+      <span class="p-float-label">
+        <input pInputText type="text" id="phone" formControlName="phone">
+        <label for="phone">Phone number</label>
+      </span>
+    </div>
+
+    <div class="field col-12 md:col-6">
+      <span class="p-float-label">
+        <p-calendar id="bdate" formControlName="birthday" [showIcon]="true" (onSelect)="debug($event)"/>
+        <label for="bdate">Birth date</label>
+      </span>
+    </div>
+
+  </div>
+
+  <div class="formgrid">
+    <p-button icon="pi pi-check" label="Sumbit"  (onClick)="submitForm()"/>
+  </div>
+
+</form>

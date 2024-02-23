@@ -41,6 +41,10 @@ export class AppComponent implements OnInit{
           {
             label: 'Http Request',
             routerLink: 'demos/request'
+          },
+          {
+            label: 'Forms' ,
+            routerLink: 'demos/forms'
           }
         ]
       },
@@ -62,6 +66,10 @@ export class AppComponent implements OnInit{
           {
             label : 'Shopping list with service',
             routerLink: 'exos/shopping-service'
+          },
+          {
+            label: 'Forms',
+            routerLink: 'exos/forms'
           }
         ]
       }
