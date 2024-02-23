@@ -37,6 +37,10 @@ export class AppComponent implements OnInit{
           {
             label: 'Compteur',
             routerLink: 'demos/count'
+          },
+          {
+            label: 'Http Request',
+            routerLink: 'demos/request'
           }
         ]
       },

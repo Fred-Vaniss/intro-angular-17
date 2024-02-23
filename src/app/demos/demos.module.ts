@@ -8,6 +8,8 @@ import { CustomDirectiveComponent } from './components/custom-directive/custom-d
 import { HighlightDirective } from './components/custom-directive/highlight.directive';
 import {SharedModule} from "../shared-module/shared.module";
 import {HelloComponent} from "./components/hello/hello.component";
+import { HttpRequestComponent } from './components/http-request/http-request.component';
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -16,11 +18,13 @@ import {HelloComponent} from "./components/hello/hello.component";
     CompteurComponent,
     CustomDirectiveComponent,
     HighlightDirective,
-    HelloComponent
+    HelloComponent,
+    HttpRequestComponent
   ],
   imports: [
     SharedModule,
-    DemosRoutingModule
+    DemosRoutingModule,
+    HttpClientModule
   ]
 })
 export class DemosModule { }

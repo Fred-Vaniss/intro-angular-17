@@ -7,9 +7,5 @@ import {IMenu} from "../components/navbar/IMenu";
   styleUrl: './demos.component.scss'
 })
 export class DemosComponent {
-  menu: Array<IMenu> = [
-    { route: 'hello', label: 'Hello!'},
-    { route: 'count', label: 'Count'},
-    { route: 'directive', label: 'Custom directives' }
-  ]
+
 }

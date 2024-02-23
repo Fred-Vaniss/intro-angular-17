@@ -1,0 +1,11 @@
+<p>http-request works!</p>
+<p>{{ result | json }}</p>
+
+<ul>
+  @for(user of result; track $index)
+  {
+    <li>{{user.nickname}}</li>
+  }
+</ul>
+
+<button (click)="consolePrint()">Console print</button>
