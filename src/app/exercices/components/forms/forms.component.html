@@ -38,7 +38,7 @@
 
     <div class="field col-12 md:col-4">
       <span class="p-float-label">
-        <input pInputText type="password" id="conf-password" formControlName="pWordConf"/>
+        <input pInputText type="password" id="conf-password" formControlName="pWordConf" [class.ng-invalid]="formGroup.errors?.['PasswordMismatch']"/>
         <label for="conf-password">Confirm password</label>
       </span>
     </div>
@@ -67,15 +67,50 @@
 
     <div class="field col-12 md:col-6">
       <span class="p-float-label">
-        <p-calendar id="bdate" formControlName="birthday" [showIcon]="true" (onSelect)="debug($event)"/>
+        <p-calendar id="bdate" formControlName="birthday" [showIcon]="true"/>
         <label for="bdate">Birth date</label>
       </span>
     </div>
 
   </div>
 
+  <h3>Hobbies</h3>
+
+  <div class="formgrid grid" formArrayName="myArray">
+
+    <div *ngFor="let item of getArray.controls;let i = index" class="field col-12 md:col-4 flex">
+      <input type="text" pInputText [formControlName]="i"/>
+      <p-button icon="pi pi-trash" severity="danger" (onClick)="removeArrayEl(i)"/>
+    </div>
+
+    <div *ngIf="getArray.controls.length === 0">
+      <p>Empty</p>
+    </div>
+
+
+  </div>
+
   <div class="formgrid">
-    <p-button icon="pi pi-check" label="Sumbit"  (onClick)="submitForm()"/>
+    <p-button label="add" (onClick)="addArrayEl()"/>
+  </div>
+
+  <div class="formgrid">
+    <p-button icon="pi pi-check" label="Sumbit" [disabled]="!formGroup.valid"  (onClick)="submitForm()"/>
   </div>
 
 </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

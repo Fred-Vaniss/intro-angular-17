@@ -1,5 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {
+  AbstractControl,
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  ValidationErrors,
+  ValidatorFn,
+  Validators
+} from "@angular/forms";
 import {User} from "./user";
 
 @Component({
@@ -16,38 +25,39 @@ export class FormsComponent implements OnInit{
   ngOnInit() : void {
 
     this.formGroup = this._formBuilder.group({
-      firstName: ['Jean', [
+      firstName: [null, [
         Validators.required,
         Validators.maxLength(20),
         Validators.minLength(3)
       ]],
-      lastName: ['Dujardin', [
+      lastName: [null, [
         Validators.required,
         Validators.maxLength(20),
         Validators.minLength(3)
       ]],
-      eMail: ['jean@du.com', [
+      eMail: [null, [
         Validators.required,
         Validators.email,
         Validators.maxLength(30),
         Validators.minLength(3)
       ]],
-      pWord: ['1234', [
+      pWord: ['', [
         Validators.required,
         Validators.maxLength(40),
         Validators.minLength(3)
       ]],
-      pWordConf: ['1234', [
+      pWordConf: ['', [
         Validators.required,
         Validators.maxLength(40),
         Validators.minLength(3),
+
       ]],
-      address: ['1234', [
+      address: [null, [
         Validators.required,
         Validators.maxLength(40),
         Validators.minLength(3)
       ]],
-      phone: ['1234', [
+      phone: [null, [
         Validators.required,
         Validators.maxLength(40),
         Validators.minLength(3)
@@ -55,15 +65,28 @@ export class FormsComponent implements OnInit{
       birthday: [new Date(), [
         Validators.required,
       ]],
-    })
+      myArray: this._formBuilder.array([])
+    }, {validators: this.matchPassword()})
 
+  }
+
+  get getArray() : FormArray {
+    return this.formGroup.get('myArray') as FormArray
+  }
+
+  addArrayEl() : void {
+    this.getArray.push(new FormControl("",[Validators.required]))
+
+    console.log(this.getArray)
+  }
+
+  removeArrayEl(index : number) : void {
+    this.getArray.removeAt(index);
   }
 
   submitForm() : void {
 
     let values = this.formGroup.value
-
-
 
     let user : User = {
       firstName: values.firstName,
@@ -79,7 +102,9 @@ export class FormsComponent implements OnInit{
     console.log(this.formGroup)
   }
 
-  debug(event: any) : void {
-    console.log(event.toLocaleDateString())
+  matchPassword() : ValidatorFn | null {
+    return (control: AbstractControl) : ValidationErrors | null => {
+      return control.value.pWord === control.value.pWordConf ? null : { PasswordMismatch : true }
+    }
   }
 }
