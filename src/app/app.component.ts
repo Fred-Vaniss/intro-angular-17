@@ -70,8 +70,16 @@ export class AppComponent implements OnInit{
           {
             label: 'Forms',
             routerLink: 'exos/forms'
+          },
+          {
+            label: 'Login',
+            routerLink: 'exos/login'
           }
         ]
+      },
+      {
+        label: 'Playground',
+        routerLink: 'playground'
       }
     ]
   }

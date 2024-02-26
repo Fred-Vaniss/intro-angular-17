@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 
 interface IUser {
   id: number,
-  nickname: string,
+  nickName: string,
   email: string,
 }
 
@@ -22,7 +22,6 @@ export class HttpRequestComponent implements OnInit{
   ngOnInit() {
     this.http.get<IUser[]>("https://localhost:7256/api/User").subscribe(data => {
       this.result = data
-
     })
 
   }

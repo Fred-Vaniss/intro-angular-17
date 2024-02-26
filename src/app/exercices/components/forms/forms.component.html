@@ -67,7 +67,7 @@
 
     <div class="field col-12 md:col-6">
       <span class="p-float-label">
-        <p-calendar id="bdate" formControlName="birthday" [showIcon]="true"/>
+        <p-calendar id="bdate" formControlName="birthday" [showIcon]="true" [style]="{'width':'100%'}"/>
         <label for="bdate">Birth date</label>
       </span>
     </div>
@@ -78,8 +78,8 @@
 
   <div class="formgrid grid" formArrayName="myArray">
 
-    <div *ngFor="let item of getArray.controls;let i = index" class="field col-12 md:col-4 flex">
-      <input type="text" pInputText [formControlName]="i"/>
+    <div *ngFor="let item of getArray.controls ; let i = index" class="field col-12 md:col-4 flex">
+      <input type="text" pInputText [formControlName]="i" class="mr-1"/>
       <p-button icon="pi pi-trash" severity="danger" (onClick)="removeArrayEl(i)"/>
     </div>
 

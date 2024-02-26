@@ -15,6 +15,7 @@ import { ShoppingWithServiceEnfantComponent } from './components/shopping-w-serv
 import { FormsComponent } from './components/forms/forms.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {CalendarModule} from "primeng/calendar";
+import { LoginFormComponent } from './components/login-form/login-form.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {CalendarModule} from "primeng/calendar";
     ShoppingEnfantComponent,
     ShoppingWithServiceParentComponent,
     ShoppingWithServiceEnfantComponent,
-    FormsComponent
+    FormsComponent,
+    LoginFormComponent
   ],
   imports: [
     CommonModule,

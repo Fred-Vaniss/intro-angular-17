@@ -9,12 +9,14 @@ import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import {SharedModule} from "./shared-module/shared.module";
 import {MenubarModule} from "primeng/menubar";
+import { PlaygroundComponent } from './components/playground/playground.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NotFoundComponent,
+    PlaygroundComponent,
   ],
     imports: [
         BrowserModule,

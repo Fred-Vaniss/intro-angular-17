@@ -1,15 +1,12 @@
-p-calendar{
-  display: block;
-}
-
-p-calendar .p-calendar{
-  width: 100%;
-}
-
 input, .p-calendar, p-calendar{
   width: 100%
 }
 
 .formgrid{
   margin-bottom: 1.5rem;
+}
+
+.form-error{
+  color: red;
+  font-size: .8rem;
 }

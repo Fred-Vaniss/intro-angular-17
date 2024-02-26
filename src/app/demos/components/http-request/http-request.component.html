@@ -4,8 +4,8 @@
 <ul>
   @for(user of result; track $index)
   {
-    <li>{{user.nickname}}</li>
+    <li>{{user.id}} {{user.nickName}}</li>
   }
 </ul>
 
-<button (click)="consolePrint()">Console print</button>
+<p-button (click)="consolePrint()" label="Console print" icon="pi pi-print"/>

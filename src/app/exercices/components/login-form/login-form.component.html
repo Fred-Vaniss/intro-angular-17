@@ -1,0 +1,42 @@
+<h2>Login exercice</h2>
+
+<form class="mt-5" [formGroup]="formGroup">
+  <div class="formgrid grid">
+
+    <div class="field col-12 md:col-6">
+      <span class="p-float-label">
+        <input pInputText type="text" id="login" formControlName="login">
+        <label for="login">Login</label>
+      </span>
+      <ul class="form-error" *ngIf="formGroup.get('login')?.touched">
+        <li *ngIf="err('login', 'minlength')">Login need at least 8 characters</li>
+        <li *ngIf="err('login', 'maxlength')">Login contains too much characters</li>
+      </ul>
+    </div>
+
+    <div class="field col-12 md:col-6">
+      <span class="p-float-label">
+        <input pInputText type="text" id="password" formControlName="password">
+        <label for="password">Password</label>
+      </span>
+      <ul class="form-error" *ngIf="formGroup.get('password')?.touched">
+        <li *ngIf="err('password', 'minlength')">Password need at least 8 characters</li>
+        <li *ngIf="err('password', 'maxlength')">Password contains too much characters</li>
+        <li *ngIf="err('password', 'missingLowerCase')">Password need at least a lowercase character (a-z)</li>
+        <li *ngIf="err('password', 'missingUpperCase')">Password need at least an uppercase character (A-Z)</li>
+        <li *ngIf="err('password', 'missingNumber')">Password need at least a number (0-9)</li>
+        <li *ngIf="err('password', 'missingSpecialCharacter')">Password need at least a special character</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="formgrid">
+    <p-button label="Login" (onClick)="login()"/>
+  </div>
+
+</form>
+
+<p>{{formGroup.get('password')?.errors | json}}</p>
+
+<p-toast/>

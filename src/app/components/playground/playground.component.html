@@ -1,0 +1,7 @@
+<h2>Typescript playground</h2>
+
+<h3>Output:</h3>
+<ul class="output">
+  <p-button *ngIf="logs.length > 0" icon="pi pi-times" label="clear" (onClick)="clearLogs()"/>
+  <li *ngFor="let str of logs"><code>{{str}}</code></li>
+</ul>
