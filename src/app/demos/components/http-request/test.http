@@ -1,0 +1,38 @@
+GET https://localhost:7271/api/Employee/all
+
+###
+
+GET https://localhost:7271/api/Employee/1
+
+###
+
+GET https://localhost:7271/api/Animal/AllAnimals
+
+###
+
+POST https://localhost:7271/api/employee/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
+
+###
+
+POST https://localhost:7271/api/Employee/new
+Authorization: Bearer {{$auth.token("test")}}
+Content-Type: application/json
+
+{
+  "userName": "serious_sam",
+  "password": "user12345",
+  "confirmPassword": "user12345",
+  "role": "Veto",
+  "firstName": "Samuel",
+  "lastName": "Sérieux",
+  "birthDate": "1992-03-14T11:07:25.025Z",
+  "specialties": [
+    1, 2
+  ]
+}

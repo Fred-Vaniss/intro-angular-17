@@ -1,11 +1,40 @@
 <p>http-request works!</p>
-<p>{{ result | json }}</p>
+<!--<p>{{ result | json }}</p>-->
+
 
 <ul>
   @for(user of result; track $index)
   {
-    <li>{{user.id}} {{user.nickName}}</li>
+    <li>{{user.id}} {{user.nickName}} <a (click)="getDetails(user.id)">Details</a></li>
   }
 </ul>
 
-<p-button (click)="consolePrint()" label="Console print" icon="pi pi-print"/>
+<p-button label="Get all" (onClick)="list()" class="mb-2"/> <br/>
+
+<p-button (click)="consolePrint()" label="Console print" icon="pi pi-print"/> <br/>
+
+<form [formGroup]="formGroup">
+
+  <div class="grid  my-4">
+
+    <div class="col">
+      <span class="p-float-label">
+        <input type="text" id="login" pInputText class="w-full" formControlName="email">
+        <label for="login">Login</label>
+      </span>
+    </div>
+
+    <div class="col">
+      <span class="p-float-label">
+        <input type="password" id="password" pInputText class="w-full" formControlName="password">
+        <label for="password">Password</label>
+      </span>
+    </div>
+
+  </div>
+
+  <p-button label="Login" (onClick)="submitLogin()"/>
+
+</form>
+
+<p-messages></p-messages>
