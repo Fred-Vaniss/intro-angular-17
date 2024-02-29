@@ -13,7 +13,6 @@ import { ShoppingEnfantComponent } from './components/shopping/shopping-enfant/s
 import { ShoppingWithServiceParentComponent } from './components/shopping-w-service/shopping-with-service-parent/shopping-with-service-parent.component';
 import { ShoppingWithServiceEnfantComponent } from './components/shopping-w-service/shopping-with-service-enfant/shopping-with-service-enfant.component';
 import { FormsComponent } from './components/forms/forms.component';
-import {ReactiveFormsModule} from "@angular/forms";
 import {CalendarModule} from "primeng/calendar";
 import { LoginFormComponent } from './components/login-form/login-form.component';
 
@@ -36,7 +35,6 @@ import { LoginFormComponent } from './components/login-form/login-form.component
     SharedModule,
     RouterModule,
     ExercicesRoutingModule,
-    ReactiveFormsModule,
     CalendarModule
   ]
 })

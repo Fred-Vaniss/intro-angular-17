@@ -1,0 +1,11 @@
+<h2>Demo routing params</h2>
+
+<h3>Router param (:id)</h3>
+<p>{{curParam}}</p>
+
+<h3>Query params:</h3>
+<ul>
+  <li *ngFor="let p of curQueryParam | keyvalue">
+    {{p.key}} : {{p.value}}
+  </li>
+</ul>

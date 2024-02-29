@@ -5,7 +5,7 @@ import {IMenu} from "./components/navbar/IMenu";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit{
   title = 'demo';
@@ -45,6 +45,28 @@ export class AppComponent implements OnInit{
           {
             label: 'Forms' ,
             routerLink: 'demos/forms'
+          },
+          {
+            label: 'Routin params',
+            routerLink: 'demos/routing-params'
+          },
+          {
+            label: 'Routing guards',
+            routerLink: 'demos/guards',
+            items: [
+              {
+                label: 'Home',
+                routerLink: 'demos/guards'
+              },
+              {
+                label: 'Login',
+                routerLink: 'demos/guards/login'
+              },
+              {
+                label: 'Logout',
+                routerLink: 'demos/guards/logout'
+              }
+            ]
           }
         ]
       },

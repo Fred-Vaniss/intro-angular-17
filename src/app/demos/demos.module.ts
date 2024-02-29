@@ -9,9 +9,12 @@ import { HighlightDirective } from './components/custom-directive/highlight.dire
 import {SharedModule} from "../shared-module/shared.module";
 import {HelloComponent} from "./components/hello/hello.component";
 import { HttpRequestComponent } from './components/http-request/http-request.component';
-import {HttpClientModule} from "@angular/common/http";
 import { FormsComponent } from './components/forms/forms.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { RoutingParamsComponent } from './components/routing-params/routing-params.component';
+import { GuardHomeComponent } from './components/routing-guard/guard-home/guard-home.component';
+import { GuardLoginComponent } from './components/routing-guard/guard-login/guard-login.component';
+import { GuardLogoutComponent } from './components/routing-guard/guard-logout/guard-logout.component';
+import {MessagesModule} from "primeng/messages";
 
 
 @NgModule({
@@ -22,14 +25,16 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     HighlightDirective,
     HelloComponent,
     HttpRequestComponent,
-    FormsComponent
+    FormsComponent,
+    RoutingParamsComponent,
+    GuardHomeComponent,
+    GuardLoginComponent,
+    GuardLogoutComponent
   ],
-  imports: [
-    SharedModule,
-    DemosRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
-  ]
+    imports: [
+        SharedModule,
+        DemosRoutingModule,
+        MessagesModule,
+    ]
 })
 export class DemosModule { }

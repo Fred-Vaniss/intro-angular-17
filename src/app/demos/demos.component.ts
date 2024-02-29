@@ -4,7 +4,8 @@ import {IMenu} from "../components/navbar/IMenu";
 @Component({
   selector: 'app-demos',
   templateUrl: './demos.component.html',
-  styleUrl: './demos.component.scss'
+  styleUrl: './demos.component.scss',
+
 })
 export class DemosComponent {
 

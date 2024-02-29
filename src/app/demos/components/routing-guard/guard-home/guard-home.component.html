@@ -1,0 +1,7 @@
+<h1>Welcome to routing guard {{userEmail === null ? '' : userEmail}}</h1>
+
+@if (userEmail === null){
+  <a routerLink="login">Login</a>
+} @else {
+  <a routerLink="logout">Logout</a>
+}
