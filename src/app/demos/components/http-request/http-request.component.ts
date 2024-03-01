@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, ObservableInput, throwError} from "rxjs";
 import {Message, MessageService} from "primeng/api";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
@@ -11,12 +11,6 @@ interface User {
   email: string,
 }
 
-interface Employee{
-  id: number,
-  firstName: string,
-  lastName: string
-}
-
 @Component({
   selector: 'app-_http-request',
   templateUrl: './http-request.component.html',
@@ -25,7 +19,6 @@ interface Employee{
 })
 export class HttpRequestComponent implements OnInit{
 
-  private _employeeUrl = "https://localhost:7271/api/employee/"
   private _userUrl = "https://localhost:7256/api/user/"
 
   public formGroup! : FormGroup;
@@ -74,6 +67,11 @@ export class HttpRequestComponent implements OnInit{
     )
   }
 
+  public logout() : void {
+    sessionStorage.removeItem('token')
+    this._messageService.add({severity: 'success', summary: 'Logged out'})
+  }
+
   public list() : void {
     this.getAll().subscribe(
       ( data: User[] ) => {
@@ -99,10 +97,11 @@ export class HttpRequestComponent implements OnInit{
   // API requests
   //////////////////////////
 
-  private setBearer() : HttpHeaders {
-    const header : HttpHeaders = new HttpHeaders()
-    header.set('Authorization','Bearer ' + sessionStorage.getItem('token'))
-    return header;
+  private setHeader() : HttpHeaders {
+    return new HttpHeaders({
+      'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+      'Content-Type': 'application/json; charset=utf-8'
+    });
   }
 
   private getAll() : Observable<User[]> {
@@ -114,19 +113,22 @@ export class HttpRequestComponent implements OnInit{
   }
 
   private get(id: number) : Observable<User> {
-    return this._http.get<User>(this._userUrl+id, {headers: this.setBearer()})
+    return this._http.get<User>(this._userUrl+id, {headers: this.setHeader()})
+      .pipe(catchError( (error : HttpErrorResponse) => {
+        return this.handleError(error, `Failed to get user details: ${error.status}`, error.message)
+      } ))
   }
 
   private login(form: LoginForm) : Observable<TokenResponse> {
     return this._http
       .post<TokenResponse>(this._userUrl+"login", form)
       .pipe(catchError( (error) => {
-        return this.handleError(error, 'Failed to login')
+        return this.handleError(error, `Failed to login: ${error.status}`, error.message)
       }));
 
   }
 
-  private handleError(error: Response, message: string, detail: string = ''): ObservableInput<any>{
+  private handleError(error: HttpErrorResponse, message: string, detail: string = ''): ObservableInput<any>{
     console.log(error);
     this._messageService.add({severity: 'error', summary: message, detail: detail});
     return throwError( () => {
