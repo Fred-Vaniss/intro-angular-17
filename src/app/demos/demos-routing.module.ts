@@ -11,6 +11,8 @@ import {GuardHomeComponent} from "./components/routing-guard/guard-home/guard-ho
 import {GuardLoginComponent} from "./components/routing-guard/guard-login/guard-login.component";
 import {GuardLogoutComponent} from "./components/routing-guard/guard-logout/guard-logout.component";
 import {mustBeAnomymous, mustBeLogged} from "./guards/can-activate.guard";
+import {ResolverComponent} from "./components/resolver/resolver.component";
+import {demoResolver} from "./resolvers/demo.resolver";
 
 const routes: Routes = [
   { path:'', component: DemosComponent, children: [
@@ -22,7 +24,9 @@ const routes: Routes = [
       { path: 'routing-params/:id', component: RoutingParamsComponent },
       { path: 'guards', component: GuardHomeComponent },
       { path: 'guards/login', component: GuardLoginComponent, canActivate : [mustBeAnomymous]},
-      { path: 'guards/logout', component: GuardLogoutComponent, canActivate : [mustBeLogged]}
+      { path: 'guards/logout', component: GuardLogoutComponent, canActivate : [mustBeLogged]},
+      { path: 'resolver', component: ResolverComponent, resolve: { user: demoResolver } },
+      { path: 'resolver/:id', component: ResolverComponent, resolve: { user: demoResolver } }
     ]
   }
 ];

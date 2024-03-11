@@ -67,6 +67,10 @@ export class AppComponent implements OnInit{
                 routerLink: 'demos/guards/logout'
               }
             ]
+          },
+          {
+            label: 'Resolver',
+            routerLink: 'demos/resolver'
           }
         ]
       },

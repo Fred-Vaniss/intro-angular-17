@@ -15,6 +15,10 @@ import { GuardHomeComponent } from './components/routing-guard/guard-home/guard-
 import { GuardLoginComponent } from './components/routing-guard/guard-login/guard-login.component';
 import { GuardLogoutComponent } from './components/routing-guard/guard-logout/guard-logout.component';
 import {MessagesModule} from "primeng/messages";
+import { ResolverComponent } from './components/resolver/resolver.component';
+import {InterceptorComponent} from "./components/interceptor/interceptor.component";
+import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptors} from "@angular/common/http";
+import {authInterceptor} from "./components/interceptor/auth.interceptor";
 
 
 @NgModule({
@@ -29,12 +33,17 @@ import {MessagesModule} from "primeng/messages";
     RoutingParamsComponent,
     GuardHomeComponent,
     GuardLoginComponent,
-    GuardLogoutComponent
+    GuardLogoutComponent,
+    ResolverComponent,
+    InterceptorComponent
   ],
-    imports: [
-        SharedModule,
-        DemosRoutingModule,
-        MessagesModule,
-    ]
+  imports: [
+    SharedModule,
+    DemosRoutingModule,
+    MessagesModule,
+  ],
+  providers: [
+    provideHttpClient( withInterceptors([authInterceptor]) )
+  ]
 })
 export class DemosModule { }
